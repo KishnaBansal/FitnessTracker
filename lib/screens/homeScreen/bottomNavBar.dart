@@ -1,4 +1,5 @@
 import 'package:fitness_app/constants/color.dart';
+import 'package:fitness_app/screens/ProfilePage/profilePage.dart';
 import 'package:fitness_app/screens/homeScreen/homeScreen.dart';
 import 'package:fitness_app/screens/homeScreen/notificationScreen.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _HomePageNavBarState extends State<HomePageNavBar> {
     HomePage(),
     HomePage(),
     NotificationPage(),
-    HomePage(),
+    ProfilePage(),
   ];
   int _selectedIndex = 0;
   @override
@@ -24,34 +25,37 @@ class _HomePageNavBarState extends State<HomePageNavBar> {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: _widgetOptions.elementAt(_selectedIndex),
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.poll),
-              label: 'Progress',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_active_outlined),
-              label: 'Notifications',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: PrimaryColor,
-          unselectedItemColor: Colors.grey,
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-        
+        bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(canvasColor: Colors.black),
+          child: BottomNavigationBar(
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.poll),
+                label: 'Progress',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.notifications_active_outlined),
+                label: 'Notifications',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: PrimaryColor,
+            unselectedItemColor: Colors.grey,
+            onTap: (index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+          
+          ),
         ),
       ),
     );

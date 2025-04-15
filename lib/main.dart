@@ -6,6 +6,9 @@ import 'package:fitness_app/screens/HeightScreen/heightScreen.dart';
 import 'package:fitness_app/screens/LoginSignUp/forgotPassword.dart';
 import 'package:fitness_app/screens/LoginSignUp/loginSignUp.dart';
 import 'package:fitness_app/screens/OnBoardingScreen/onBoardingScreen.dart';
+import 'package:fitness_app/screens/ProfilePage/privacyPolicy.dart';
+import 'package:fitness_app/screens/ProfilePage/profilePage.dart';
+import 'package:fitness_app/screens/ProfilePage/settingPage.dart';
 import 'package:fitness_app/screens/WeightScreen/weightScreen.dart';
 import 'package:fitness_app/screens/homeScreen/bottomNavBar.dart';
 import 'package:fitness_app/screens/homeScreen/homeScreen.dart';
@@ -36,6 +39,10 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/forgot-password': (context) => ForgetPasswordScreen(),
         '/workoutCategories': (context) => WorkoutCategoriesPage(),
+        '/bottomNavBar': (context) => HomePageNavBar(),
+        '/profile': (context) => ProfilePage(),
+        '/privacyPolicy': (context) => PrivacyPolicyPage(),
+        '/settingsPage': (context) => SettingsPage(),
       },
       debugShowCheckedModeBanner: false,
       home: HomePageNavBar()
