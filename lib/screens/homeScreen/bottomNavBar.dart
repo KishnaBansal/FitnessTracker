@@ -2,6 +2,7 @@ import 'package:fitness_app/constants/color.dart';
 import 'package:fitness_app/screens/ProfilePage/profilePage.dart';
 import 'package:fitness_app/screens/homeScreen/homeScreen.dart';
 import 'package:fitness_app/screens/homeScreen/notificationScreen.dart';
+import 'package:fitness_app/screens/homeScreen/workoutProgress.dart';
 import 'package:flutter/material.dart';
 
 class HomePageNavBar extends StatefulWidget {
@@ -14,7 +15,7 @@ class HomePageNavBar extends StatefulWidget {
 class _HomePageNavBarState extends State<HomePageNavBar> {
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    HomePage(),
+    workoutProgress(),
     NotificationPage(),
     ProfilePage(),
   ];
